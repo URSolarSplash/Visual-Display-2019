@@ -69,7 +69,7 @@ void loop() {
   }
 
   //Handle timeout
-  if ((milliTimer / 1000) - lastPressTime > 10 & displayState != 0){
+  if ((milliTimer / 1000) - lastPressTime > 65 & displayState != 0){
     //Timeout and return to wait state
     displayState = 0;
     changeState();

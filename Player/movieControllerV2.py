@@ -22,18 +22,14 @@ if len(arduino_ports) > 1:
 print "Connected to Arduino!\n"
 ser = serial.Serial(port=arduino_ports[0],timeout=None)
 
-timestamps = [333,531,0,1018,840]
+timestamps = [20,99,177,253,334]
+duration = 65
 
-#Sleep some time to allow the computer to start up
-print "Waiting for system startup...\n"
-time.sleep(10)
-
-VIDEO_PATH = Path("./CombinedVideoTest.mp4")
+VIDEO_PATH = Path("~/vis_display_combined.mp4")
 player = OMXPlayer(VIDEO_PATH,args=["--loop","--no-osd"])
-player.set_aspect_mode("stretch")
-player.set_video_pos(0,0,1280,800)
+#player.set_aspect_mode("stretch")
+#player.set_video_pos(0,0,1280,800)
 player.mute()
-#player.set_alpha(100)
 print "Started Video!\n"
 
 try:
